@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Varshautsav Notices</title>
+
+<style>
+body{
+  font-family:'Segoe UI';
+  background:#e0f2fe;
+  padding:40px;
+}
+h2{
+  text-align:center;
+}
+.container{
+  max-width:800px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+}
+.item{
+  padding:12px;
+  cursor:pointer;
+}
+.item:not(:last-child){
+  border-bottom:1px solid #ddd;
+}
+.item:hover{
+  background:#bae6fd;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Varshautsav Notices</h2>
+<div class="container" id="list"></div>
+
+<script>
+let notices = JSON.parse(localStorage.getItem("notices")) || [];
+let list = document.getElementById("list");
+
+let filtered = notices.filter(n => n.event === "varsha");
+
+if(filtered.length === 0){
+  list.innerHTML = "<p>No notices available</p>";
+}else{
+  filtered.forEach((n)=>{
+    list.innerHTML += `
+      <div class="item" onclick="openNotice('${n.title}')">
+        🔔 ${n.title}
+      </div>
+    `;
+  });
+}
+
+function openNotice(title){
+  let notices = JSON.parse(localStorage.getItem("notices"));
+  let notice = notices.find(n => n.title === title);
+  localStorage.setItem("selectedNotice", JSON.stringify(notice));
+  window.open("notice-view.html","_blank");
+}
+</script>
+
+</body>
+</html>

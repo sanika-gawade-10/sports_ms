@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin</title>
+
+<style>
+body{font-family:'Segoe UI';background:#f1f5f9;padding:40px;}
+.box,.list{
+  max-width:600px;margin:auto;background:white;padding:20px;
+  border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+.list{margin-top:25px;}
+input,button{width:100%;margin-top:10px;padding:10px;border-radius:6px;}
+button{background:#2563eb;color:white;border:none;cursor:pointer;}
+.delete{background:#ef4444;width:4rem;}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Upload Notice</h2>
+  <input id="title" placeholder="Enter title">
+  <input type="file" id="image">
+  <button onclick="uploadNotice()">Send</button>
+</div>
+
+<div class="list">
+  <h3>Uploaded Notices</h3>
+  <div id="noticeList"></div>
+</div>
+
+<script>
+function loadNotices(){
+  let notices = JSON.parse(localStorage.getItem("notices")) || [];
+  let list = document.getElementById("noticeList");
+  list.innerHTML="";
+
+  if(notices.length===0){
+    list.innerHTML="<p>No notices uploaded</p>";
+    return;
+  }
+
+  notices.forEach((n,i)=>{
+    list.innerHTML+=`
+      <div style="display:flex;justify-content:space-between">
+        <span>${n.title}</span>
+        <button class="delete" onclick="deleteNotice(${i})">X</button>
+      </div>`;
+  });
+}
+
+function uploadNotice(){
+  let title=document.getElementById("title").value;
+  let file=document.getElementById("image").files[0];
+
+  if(!title || !file){ alert("Fill all fields"); return; }
+
+  let reader=new FileReader();
+  reader.onload=function(){
+    let notices=JSON.parse(localStorage.getItem("notices"))||[];
+    notices.unshift({
+  id: Date.now(),   // ✅ unique ID
+  title: title,
+  image: reader.result
+});
+    localStorage.setItem("notices",JSON.stringify(notices));
+
+    alert("Uploaded!");
+    document.getElementById("title").value="";
+    document.getElementById("image").value="";
+    loadNotices();
+  };
+  reader.readAsDataURL(file);
+}
+
+function deleteNotice(i){
+  let notices=JSON.parse(localStorage.getItem("notices"))||[];
+  notices.splice(i,1);
+  localStorage.setItem("notices",JSON.stringify(notices));
+  loadNotices();
+}
+
+loadNotices();
+</script>
+
+</body>
+</html>

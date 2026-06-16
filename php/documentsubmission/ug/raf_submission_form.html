@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Certificates For Regular Admission For First Year</title>
+    <style>
+      html,
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        background-image: url("/sports_ms/documentsubmission/simg/bg (2).jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        color: #333;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      /* the rest of your CSS */
+
+      form {
+        background-color: #ffffffef;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        margin: auto;
+      }
+
+      div {
+        display: block;
+        margin: 20px 0px; /* Increased vertical spacing, removed horizontal margin */
+        font-weight: bold;
+        text-align: center;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+          0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+
+        input[type="file"] {
+          margin: 10px 0px; /* Added margin for space between input elements */
+        }
+      }
+
+      input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+        background-color: #0786f6;
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 90px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s; /* transition effect added */
+        width: 100%;
+        max-width: 400px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #078607;
+        transform: scale(1.05); /* Button will scale up a little bit on hover */
+      }
+
+      .custom-file-input {
+        display: none;
+      }
+
+      .custom-file-label {
+        display: inline-block;
+        background-color: #0786f6;
+        color: #fff;
+        padding: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".custom-file-input").change(function () {
+          var fileName = $(this).val().split("\\").pop();
+          fileName
+            ? $(this).prev().text(`File chosen: ${fileName}`)
+            : $(this).prev().text("Choose file");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Certificates For Regular Admission For First Year</h1>
+    <form action="raf_upload.php" method="post" enctype="multipart/form-data">
+      <div>
+        <label class="custom-file-label" for="passing_certificate"
+          >Choose 10th Passing Certificate:</label
+        >
+        <input
+          class="custom-file-input"
+          type="file"
+          name="passing_certificate"
+          id="passing_certificate"
+        />
+      </div>
+      <div>
+        <label class="custom-file-label" for="marksheet"
+          >Choose 12th Marksheet:</label
+        >
+        <input
+          class="custom-file-input"
+          type="file"
+          name="marksheet"
+          id="marksheet"
+        />
+      </div>
+      <div>
+        <label class="custom-file-label" for="aadhar_card"
+          >Choose Aadhar Card:</label
+        >
+        <input
+          class="custom-file-input"
+          type="file"
+          name="aadhar_card"
+          id="aadhar_card"
+        />
+      </div>
+      <div>
+        <label class="custom-file-label" for="gap_certificate"
+          >Choose Gap Certificate:</label
+        >
+        <input
+          class="custom-file-input"
+          type="file"
+          name="gap_certificate"
+          id="gap_certificate"
+        />
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

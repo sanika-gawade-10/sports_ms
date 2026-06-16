@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Utsav Notices</title>
+
+<style>
+body{
+  font-family:'Segoe UI';
+  background:#fff7ed;
+  padding:40px;
+}
+h2{
+  text-align:center;
+}
+.container{
+  max-width:800px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+.item{
+  padding:12px;
+  cursor:pointer;
+}
+.item:not(:last-child){
+  border-bottom:1px solid #ddd;
+}
+.item:hover{
+  background:#fff1d6;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Utsav Notices</h2>
+<div class="container" id="list"></div>
+
+<script>
+let notices = JSON.parse(localStorage.getItem("notices")) || [];
+let list = document.getElementById("list");
+
+let filtered = notices.filter(n => n.event === "utsav");
+
+if(filtered.length === 0){
+  list.innerHTML = "<p>No notices available</p>";
+}else{
+  filtered.forEach((n)=>{
+    list.innerHTML += `
+      <div class="item" onclick="openNotice('${n.title}')">
+        🔔 ${n.title}
+      </div>
+    `;
+  });
+}
+
+function openNotice(title){
+  let notices = JSON.parse(localStorage.getItem("notices"));
+  let notice = notices.find(n => n.title === title);
+  localStorage.setItem("selectedNotice", JSON.stringify(notice));
+  window.open("notice-view.html","_blank");
+}
+</script>
+
+</body>
+</html>

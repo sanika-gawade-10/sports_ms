@@ -1,0 +1,49 @@
+ 
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.h-font{
+    font-family: 'Merienda', cursive;
+}
+
+body{
+background: url('http://localhost/sports_ms/images/A-Z%20Sports/sports%20turf.jpeg')
+no-repeat center center fixed;
+background-size: cover;
+background-color: rgba(0,0,0,0.4);
+background-blend-mode: darken;
+margin:0; padding:0;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+    input[type=number] {
+    -moz-appearanc: textfield;
+     }
+
+
+.custom-bg{
+    background-color: var(--teal);
+    border: 1px solid var(--teal);
+}
+.custom-bg:hover{
+    background-color: var(--teal_hover);
+    border-color: var(--teal_hover);
+}
+
+
+  .h-line{
+    width: 150px;
+    margin: 0 auto;
+    height: 1.7px;
+}
+
+.pop:hover{
+  border-top-color: var(--teal) !important;
+  transform: scale(1.03);
+  transition: all 0.3s;
+}

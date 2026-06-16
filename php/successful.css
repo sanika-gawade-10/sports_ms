@@ -1,0 +1,40 @@
+/* Confirmation Page Styles with Resembling Home Page or Appointment Page CSS */
+:root {
+    --green: #16a085;
+    --black: #444;
+    --light-color: #777;
+    --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, -2);
+    --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+    --border: .2rem solid var(--green);
+
+}
+
+body {
+    /*  background-image: url("https://img.freepik.com/free-vector/clean-medical-background-vector_53876-166662.jpg?size=626&ext=jpg&ga=GA1.1.1040246880.1698760232&semt=ais") */
+    background-image: url("https://img.freepik.com/free-vector/clean-medical-background_53876-116875.jpg?size=626&ext=jpg&ga=GA1.1.1222169770.1704412800&semt=ais");
+    display:flex;
+    /* justify-content: center; */
+    /* flex-direction: column; */
+    /* align-items: center; */
+    min-height: 20vh;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.confirmation {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.confirmation h1 {
+    color: #4CAF50;
+}
+
+.confirmation p {
+    margin-bottom: 10px;
+}

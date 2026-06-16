@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+.hero{
+    width: 1500;
+    height: 1500;
+    background: linear-gradient(45deg,#6ac16ac5,#bda5ff);
+    position: relative;
+}
+
+#calendar{
+    width: 1200;
+    position: absolute;
+    top: 50;
+    left: 50;
+    transform: translate(-50, -50);
+}

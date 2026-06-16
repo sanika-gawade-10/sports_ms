@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View Notice</title>
+
+<style>
+body{
+  font-family:'Segoe UI';
+  background:#f4f6f8;
+  padding:40px;
+}
+.box{
+  max-width:800px;
+  margin:auto;
+  background:white;
+  padding:20px;
+  text-align:center;
+  border-radius:10px;
+}
+img{
+  width:100%;
+  border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="box"></div>
+
+<script>
+let notices = JSON.parse(localStorage.getItem("notices")) || [];
+let i = localStorage.getItem("selectedNotice");
+
+if(notices[i]){
+  document.getElementById("box").innerHTML=`
+    <h2>${notices[i].title}</h2>
+    <img src="${notices[i].image}">
+  `;
+}else{
+  document.getElementById("box").innerHTML="No notice found";
+}
+</script>
+
+</body>
+</html>

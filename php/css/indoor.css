@@ -1,0 +1,87 @@
+    *{
+        font-family: 'Poppins', sans-serif;
+    }
+    .h-font{
+        font-family: 'Merienda', cursive;
+    }
+
+    .custom-bg:hover{
+        background-color: #279e8c;
+    }
+
+    .pop:hover{
+  border-top-color: var(--teal) !important;
+  transform: scale(1.03);
+  transition: all 0.3s;
+}
+
+  .badminton-card {
+    width: 40%; 
+    margin: 2rem auto;
+    padding: 5.5rem 2rem;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, #338bf7ff, #34f8c1ff);
+    border: 0.15rem solid rgba(218,165,32,0.4);
+    box-shadow: 0 0.6rem 1.6rem rgba(0,0,0,0.12);
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    animation: fadeIn 0.9s ease forwards;
+  }
+
+  .badminton-card:hover {
+    transform: translateY(-0.4rem) scale(1.02);
+    box-shadow: 0 1rem 2.4rem rgba(0,0,0,0.2);
+  }
+
+  .badminton-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color:  #021b33;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    animation: slideDown 0.8s ease;
+  }
+
+  .badminton-card p {
+    font-size: 1.2rem;
+    margin: 0.35rem 0;
+    color: #063b2f;
+    line-height: 1.5rem;
+    animation: fadeInUp 1s ease;
+  }
+
+  .details p {
+    margin-top: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color:  #021b33;
+    animation: fadeInUp 1s ease 0.2s;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(1rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(0.5rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-0.8rem); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .badminton-card {
+      width: 85%;
+      padding: 1.6rem;
+    }
+    .badminton-card h3 {
+      font-size: 1.6rem;
+    }
+  }
