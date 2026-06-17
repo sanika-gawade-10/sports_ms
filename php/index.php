@@ -41,7 +41,7 @@
 
 <section class="sports-section">
   <h1>Welcome to Sathaye College Sports!</h1>
-  <!-- <p class="intro_home">
+  <p class="intro_home">
     At Sathaye College, <span class="highlight">sports are more than just an activity</span> — they are the spirit of our campus.
     From intercollegiate tournaments to everyday practice, we build a culture of fitness, passion, and teamwork. <br><br>
     Students can explore a wide range of sports — from <span class="highlight">cricket, football, athletics</span> to 
@@ -50,7 +50,7 @@
     Our players have earned medals at district, state, and national levels while carrying forward the values of 
     <span class="highlight">sportsmanship, discipline, and leadership</span>. <br><br>
     <b>Join Sathaye College Sports — where champions grow!</b>
-  </p> -->
+  </p>
 </section>
 
 <br><br><br>
